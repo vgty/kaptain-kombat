@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fight: one
+  experience_earned: 1
+  self_damage: 1
+  enemy_damage: 1
+  weapon: one
+
+two:
+  fight: two
+  experience_earned: 1
+  self_damage: 1
+  enemy_damage: 1
+  weapon: two
