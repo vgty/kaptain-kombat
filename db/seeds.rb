@@ -17,10 +17,10 @@
   Weapon.create(name: 'Fire Ball', attack_force: 3)
   Weapon.create(name: 'Mystic Wave', attack_force: 7)
   
-  Fight.create(player1_id: 1, player2_id: 2, weapon_player1_id: 2, weapon_player2_id: 3, winner_id: 1)
-  Fight.create(player1_id: 1, player2_id: 1, weapon_player1_id: 3, weapon_player2_id: 3, winner_id: nil)
-  Fight.create(player1_id: 3, player2_id: 1, weapon_player1_id: 1, weapon_player2_id: 3, winner_id: 3)
-  Fight.create(player1_id: 2, player2_id: 4, weapon_player1_id: 2, weapon_player2_id: 1, winner_id: 4)
+  Fight.create(player1_id: 1, player2_id: 2, weapon_player1_id: 2, weapon_player2_id: 3)
+  Fight.create(player1_id: 1, player2_id: 1, weapon_player1_id: 3, weapon_player2_id: 3)
+  Fight.create(player1_id: 3, player2_id: 1, weapon_player1_id: 1, weapon_player2_id: 3)
+  Fight.create(player1_id: 2, player2_id: 4, weapon_player1_id: 2, weapon_player2_id: 1)
   
   OverallCharacterStat.create(character_id: 1, experience: 0, winner_rate: 0)
   OverallCharacterStat.create(character_id: 2, experience: 0, winner_rate: 0)

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Player 1</th>
+      <th>Player 2</th>
+      <th>Weapon 1</th>
+      <th>Weapon 2</th>
+      <th>Winner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fights.each do |fight| %>
+      <tr>
+        <td><%= fight.player1.name%></td>
+        <td><%= fight.player2.name%></td>
+        <td><%= fight.weapon_player1.name%></td>
+        <td><%= fight.weapon_player2.name%></td>
+        <td><%= fight.winner.name%></td>
+        <td><%= link_to 'Show', fight %></td>
+        <td><%= link_to 'Edit', edit_fight_path(fight) %></td>
+        <td><%= link_to 'Destroy', fight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fight', new_fight_path %>

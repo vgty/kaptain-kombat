@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_082807) do
+ActiveRecord::Schema.define(version: 2018_09_15_142146) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -63,12 +63,10 @@ ActiveRecord::Schema.define(version: 2018_09_15_082807) do
     t.integer "player2_id"
     t.integer "weapon_player1_id"
     t.integer "weapon_player2_id"
-    t.integer "winner_id"
     t.index ["player1_id"], name: "index_fights_on_player1_id"
     t.index ["player2_id"], name: "index_fights_on_player2_id"
     t.index ["weapon_player1_id"], name: "index_fights_on_weapon_player1_id"
     t.index ["weapon_player2_id"], name: "index_fights_on_weapon_player2_id"
-    t.index ["winner_id"], name: "index_fights_on_winner_id"
   end
 
   create_table "overall_character_stats", force: :cascade do |t|

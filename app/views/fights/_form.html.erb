@@ -1,0 +1,70 @@
+<%= form_with(model: fight, local: true) do |form| %>
+  <% if fight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fight.errors.count, "error") %> prohibited this fight from being saved:</h2>
+
+      <ul>
+      <% fight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <h1>Player 1</h1>
+  
+
+  <div class="field">
+    <% @characters.each do |character| %>
+        <%= form.label character.name %>
+        <%= form.radio_button :player1_id, character.id %>
+    <% end %>
+  </div>
+
+  <h3>Addtional weapon</h3>
+  
+  <div class="field">
+    <% @weapons.each do |weapon| %>
+        <%= form.label weapon.name %>
+        <%= form.radio_button :weapon_player1_id, weapon.id %>
+    <% end %>
+  </div>
+  
+  <h1>Player 2</h1>
+  
+  <div class="field">
+    <% @characters.each do |character| %>
+        <%= form.label character.name %>
+        <%= form.radio_button :player2_id, character.id %>
+    <% end %>
+  </div>
+  
+  <h3>Addtional weapon</h3>
+
+  <div class="field">
+    <% @weapons.each do |weapon| %>
+        <%= form.label weapon.name %>
+        <%= form.radio_button :weapon_player2_id, weapon.id %>
+    <% end %>
+  </div>
+  <!-- <div class="field"> -->
+    <!-- <%= form.select :weapon_player1, options_from_collection_for_select(@weapons, :id, :name) %> -->
+  <!-- </div> -->
+  <!--  -->
+  <!-- <h1>Player 2</h1> -->
+  <!--  -->
+  <!-- <div class="field"> -->
+    <!-- <%= form.select :player2, options_from_collection_for_select(@characters, :id, :name) %> -->
+  <!-- </div> -->
+  <!--  -->
+  <!-- <h3>Addtional weapon ?</h3> -->
+  <!--  -->
+  <!-- <div class="field"> -->
+    <!-- <%= form.select :weapon_player2, options_from_collection_for_select(@weapons, :id, :name) %> -->
+  <!-- </div> -->
+  <!--  -->
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -21,6 +21,7 @@ class CharactersController < ApplicationController
 
   # POST /characters
   def create
+    binding.pry
     @character = Character.new(character_params)
 
     if @character.save
