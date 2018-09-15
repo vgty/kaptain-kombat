@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
   root 'pages#arena'
-  resources :characters
-  resources :fights
-  resources :weapons
+  get 'custom_arena', to: 'pages#custom_arena'
+  
+  resources :characters, :fights, :weapons
   resources :overall_character_stats, only: [:show]
   resources :fight_character_stats, only: [:show]
 

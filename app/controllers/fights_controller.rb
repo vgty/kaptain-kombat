@@ -28,9 +28,10 @@ class FightsController < ApplicationController
     @fights = Fight.all
     
     if @fight.save
-      redirect_to @fight, notice: 'Fight was successfully created.'
+      redirect_to :controller => 'pages', :action => 'custom_arena', :player1 => @fight.player1, :player2 => @fight.player2 
+      # render 'pages/arena', locales: { player1: @fight.player1, player2: @fight.player2 }
     else
-      render :index
+      render :new
     end
   end
 
