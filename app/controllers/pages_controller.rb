@@ -5,8 +5,15 @@ class PagesController < ApplicationController
   end
   
   def custom_arena
-    binding.pry
     @player1 = Character.find(params['player1'])
     @player2 = Character.find(params['player2'])
+  end
+  
+  def create_score
+    
+  end
+  
+  def show_score
+    
   end
 end

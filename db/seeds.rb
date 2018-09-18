@@ -30,14 +30,13 @@
   
   FightCharacterStat.create(character_id: 1, experience_earned: 1, fight_id: 1, self_damage: 2, enemy_damage: 9, weapon_id: 2, winner: true)
   FightCharacterStat.create(character_id: 2, experience_earned: 0, fight_id: 1, self_damage: 9, enemy_damage: 2, weapon_id: 3, winner: false)
-  FightCharacterStat.create(character_id: 1, experience_earned: 0, fight_id: 2, self_damage: 10, enemy_damage: 9, weapon_id: 3, winner: nil)
-  FightCharacterStat.create(character_id: 1, experience_earned: 0, fight_id: 2, self_damage: 10, enemy_damage: 9, weapon_id: 3, winner: nil)
+  FightCharacterStat.create(character_id: 1, experience_earned: 0, fight_id: 2, self_damage: 10, enemy_damage: 9, weapon_id: 3, winner: false)
+  FightCharacterStat.create(character_id: 1, experience_earned: 0, fight_id: 2, self_damage: 10, enemy_damage: 9, weapon_id: 3, winner: false)
   FightCharacterStat.create(character_id: 3, experience_earned: 1, fight_id: 3, self_damage: 4, enemy_damage: 10, weapon_id: 1, winner: true)
   FightCharacterStat.create(character_id: 1, experience_earned: 0, fight_id: 3, self_damage: 10, enemy_damage: 4, weapon_id: 3, winner: false)
   FightCharacterStat.create(character_id: 2, experience_earned: 0, fight_id: 4, self_damage: 9, enemy_damage: 4, weapon_id: 2, winner: false)
   FightCharacterStat.create(character_id: 4, experience_earned: 1, fight_id: 4, self_damage: 4, enemy_damage: 9, weapon_id: 1, winner: true)
-  
-  
+
   
   
   

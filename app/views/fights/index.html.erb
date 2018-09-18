@@ -21,7 +21,7 @@
         <td><%= fight.player2.name%></td>
         <td><%= fight.weapon_player1.name%></td>
         <td><%= fight.weapon_player2.name%></td>
-        <td><%= fight.winner.name%></td>
+        <td><%= winner(fight)%></td>
         <td><%= link_to 'Show', fight %></td>
         <td><%= link_to 'Edit', edit_fight_path(fight) %></td>
         <td><%= link_to 'Destroy', fight, method: :delete, data: { confirm: 'Are you sure?' } %></td>

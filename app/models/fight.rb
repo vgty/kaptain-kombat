@@ -3,14 +3,15 @@ class Fight < ApplicationRecord
   belongs_to :player2, class_name: "Character"
   belongs_to :weapon_player1, class_name: "Weapon"
   belongs_to :weapon_player2, class_name: "Weapon"
+  has_many :fight_character_stats
   
-
+  
   def winner
-    if FightCharacterStat.find(player1.id).winner == true
+    if player1.fight_character_stats.where(fight_id: id).first.winner == true
       player1
     else
       player2
     end
   end
-
 end
+

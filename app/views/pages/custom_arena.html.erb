@@ -1,16 +1,45 @@
-<h1>Kaptain Kombat !</h1>
-<%=link_to "characaters", characters_path%>
-<%=link_to "New Fight", new_fight_path%>
-
-
-<div><%=@player1.name%></div>
-<div><%=@player1.attack_points%></div>
-<div><%=@player1.life_points%></div>
-<div><%=image_tag @player1.avatar%></div>
-<br>
-<div><%=@player2.name%></div>
-<div><%=@player2.attack_points%></div>
-<div><%=@player2.life_points%></div>
-<div><%=image_tag @player2.avatar%></div>
+<div class="arena-container">
+  <div class="nav-battle-info">
+    <div class="info-nb-player _1">
+      <h2 class="heading">Player 1 |</h2>
+      <div class="player-name"><%=@player1.name%></div>
+    </div>
+    <div class="info-nb-player _2">
+      <div class="player2-name"><%=@player2.name%></div>
+      <h2 class="heading right"> | Player 2 </h2>
+    </div>
+  </div>
+  <div class="nav-battle-info-life">
+    <div class="info-nb-player _1">
+      <h2 class="heading">Life     |</h2>
+      <div class="life-bars">
+        <%@player1.life_points.times do%>
+        <span id="bars1">|</span>
+        <%end%>
+      </div>
+    </div>
+    <div class="info-nb-player _2">
+      <div class="life-bars" >
+        <%@player2.life_points.times do%>
+        <span id="bars2">|</span>
+        <%end%>
+      </div>
+      <h2 class="heading right">|     Life</h2>
+    </div>
+  </div>
+  <div class="fight-zone">
+    <div class="player1"><%=image_tag @player1.avatar, class: "img-player1 "%></div>
+    <div class="player2"><%=image_tag @player2.avatar, class: "img-player2 "%></div>
+  </div>
+  <div class="messages">
+    <div id="result" class="text-block">Fight !</div>
+    <%=link_to "New Fight!", new_fight_path, id: "ask-fight", class: "button w-button d-none" %>
+  </div>
+</div>
+  <%= audio_tag "kaptain-intro.mp3", controls: true, id: "my_intro"%>
+  <%= audio_tag "special-attack.mp3", controls: true, id: "special"%>
+  <%= audio_tag "punch.mp3", controls: true, id: "punch"%>
+  <%= audio_tag "punch1.mp3", controls: true, id: "punch1"%>
+</div>
 
 

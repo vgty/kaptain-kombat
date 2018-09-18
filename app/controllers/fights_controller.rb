@@ -8,6 +8,7 @@ class FightsController < ApplicationController
 
   # GET /fights/1
   def show
+    
   end
 
   # GET /fights/new
@@ -29,7 +30,6 @@ class FightsController < ApplicationController
     
     if @fight.save
       redirect_to :controller => 'pages', :action => 'custom_arena', :player1 => @fight.player1, :player2 => @fight.player2 
-      # render 'pages/arena', locales: { player1: @fight.player1, player2: @fight.player2 }
     else
       render :new
     end

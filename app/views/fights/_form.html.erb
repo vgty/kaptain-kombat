@@ -1,70 +1,142 @@
-<%= form_with(model: fight, local: true) do |form| %>
-  <% if fight.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(fight.errors.count, "error") %> prohibited this fight from being saved:</h2>
 
-      <ul>
-      <% fight.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+<div class="new-fight-s"></div>
+
+<div class="choose-container">
+  <h1 class="h1-page">NEW FIGHT !</h1>
+  
+  <div class="sub-title">
+    <h2 class="h2-new-fight">Player 1</h2>
+  </div>
+  
+  <%= form_with(model: fight, local: true) do |form| %>
+  
+    <% if fight.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(fight.errors.count, "error") %> prohibited this fight from being saved:</h2>
+
+        <ul>
+        <% fight.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <% @characters.each_slice(3) do |block_characters| %>
+      <div class="players-row row">
+        <% block_characters.each do |character| %>
+          <div class="col-md-4">
+            <div class="player-block"><%= image_tag character.avatar, class: "img-choose" %>
+              <div class="player-info-choose">
+                <div class="info-choose">Name:</div>
+                <div class="info-choose"><%=character.name%></div>
+              </div>
+              <div class="player-info-choose">
+                <div class="info-choose">Life:</div>
+                <div class="info-choose"><%=character.life_points%></div>
+              </div>
+              <div class="player-info-choose">
+                <div class="info-choose">Attack</div>
+                <div class="info-choose"><%=character.attack_points%></div>
+              </div>
+              <%= form.label character.name, class: "d-none" %>
+              <%= form.radio_button :player1_id, character.id %>
+            </div>
+          </div>
+        <%end %>
+      </div>
+    <% end %>
+    
+    <div class="sub-title">
+      <h2 class="h2-new-fight">Weapon 1</h2>
+    </div>
+    
+    <% @weapons.each_slice(3) do |block_weapons| %>
+      <div class="weapon-row row">
+        <% block_weapons.each do |weapon| %>
+          <div class="col-md-4">
+            <div class="player-block weapon">
+              <div class="player-info-choose">
+                <div class="info-choose">weapon:</div>
+                <div class="info-choose"><%=weapon.name%></div>
+              </div>
+              <div class="player-info-choose">
+                <div class="info-choose">Attack:</div>
+                <div class="info-choose"><%=weapon.attack_force%></div>
+              </div>
+              <%= form.label weapon.name, class: "d-none" %>
+              <%= form.radio_button :weapon_player1_id, weapon.id %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <%end%>
+
+
+    <div class="sub-title">
+      <h2 class="h2-new-fight">Player 2</h2>
+    </div>
+
+    <% @characters.each_slice(3) do |block_characters| %>
+      <div class="players-row row">
+        <% block_characters.each do |character| %>
+          <div class="col-md-4">
+            <div class="player-block"><%= image_tag character.avatar, class: "img-choose" %>
+              <div class="player-info-choose">
+                <div class="info-choose">Name:</div>
+                <div class="info-choose"><%=character.name%></div>
+              </div>
+              <div class="player-info-choose">
+                <div class="info-choose">Life:</div>
+                <div class="info-choose"><%=character.life_points%></div>
+              </div>
+              <div class="player-info-choose">
+                <div class="info-choose">Attack</div>
+                <div class="info-choose"><%=character.attack_points%></div>
+              </div>
+              <%= form.label character.name, class: "d-none" %>
+              <%= form.radio_button :player2_id, character.id %>
+            </div>
+          </div>
+        <%end %>
+      </div>
+    <% end %>
+    
+    <div class="sub-title">
+      <h2 class="h2-new-fight">Weapon 2</h2>
+    </div> 
+    
+    <% @weapons.each_slice(3) do |block_weapons| %>
+      <div class="weapon-row row">
+        <% block_weapons.each do |weapon| %>
+          <div class="col-md-4">
+            <div class="player-block weapon">
+              <div class="player-info-choose">
+                <div class="info-choose">weapon:</div>
+                <div class="info-choose"><%=weapon.name%></div>
+              </div>
+              <div class="player-info-choose">
+                <div class="info-choose">Attack:</div>
+                <div class="info-choose"><%=weapon.attack_force%></div>
+              </div>
+              <%= form.label weapon.name, class: "d-none" %>
+              <%= form.radio_button :weapon_player2_id, weapon.id %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <%end%>
+    <div class="sub-title actions">
+      <%= form.submit 'FIGHT!', class: 'button w-button' %>
     </div>
   <% end %>
-  
-  <h1>Player 1</h1>
-  
+</div>
+<%= audio_tag "kaptain-intro2.mp3", controls: true, :id => "battle_song"%>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="js/webflow.js" type="text/javascript"></script>
 
-  <div class="field">
-    <% @characters.each do |character| %>
-        <%= form.label character.name %>
-        <%= form.radio_button :player1_id, character.id %>
-    <% end %>
-  </div>
 
-  <h3>Addtional weapon</h3>
-  
-  <div class="field">
-    <% @weapons.each do |weapon| %>
-        <%= form.label weapon.name %>
-        <%= form.radio_button :weapon_player1_id, weapon.id %>
-    <% end %>
-  </div>
-  
-  <h1>Player 2</h1>
-  
-  <div class="field">
-    <% @characters.each do |character| %>
-        <%= form.label character.name %>
-        <%= form.radio_button :player2_id, character.id %>
-    <% end %>
-  </div>
-  
-  <h3>Addtional weapon</h3>
 
-  <div class="field">
-    <% @weapons.each do |weapon| %>
-        <%= form.label weapon.name %>
-        <%= form.radio_button :weapon_player2_id, weapon.id %>
-    <% end %>
-  </div>
-  <!-- <div class="field"> -->
-    <!-- <%= form.select :weapon_player1, options_from_collection_for_select(@weapons, :id, :name) %> -->
-  <!-- </div> -->
-  <!--  -->
-  <!-- <h1>Player 2</h1> -->
-  <!--  -->
-  <!-- <div class="field"> -->
-    <!-- <%= form.select :player2, options_from_collection_for_select(@characters, :id, :name) %> -->
-  <!-- </div> -->
-  <!--  -->
-  <!-- <h3>Addtional weapon ?</h3> -->
-  <!--  -->
-  <!-- <div class="field"> -->
-    <!-- <%= form.select :weapon_player2, options_from_collection_for_select(@weapons, :id, :name) %> -->
-  <!-- </div> -->
-  <!--  -->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
