@@ -1,4 +1,6 @@
+<div class="new-char-s">
 <%= form_with(model: character, local: true) do |form| %>
+<div class="w-25 m-auto">
   <% if character.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
@@ -11,28 +13,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :life_points %>
-    <%= form.number_field :life_points %>
+    <%= form.number_field :life_points, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :attack_points %>
-    <%= form.number_field :attack_points %>
+    <%= form.number_field :attack_points, class:"form-control" %>
   </div>
   
-  <div class="field">
+  <div class="form-group">
     <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
+    <%= form.file_field :avatar, class:"form-control" %>
   </div>
 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="sub-title actions">
+    <%= form.submit 'Create!', class: 'button w-button' %>
+  </div>
+    <%=image_tag "fire.gif"%>
+    <%=image_tag "fire.gif"%>
   </div>
 <% end %>
+</div>

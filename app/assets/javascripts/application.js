@@ -20,7 +20,15 @@
 $(document).ready(function() {
   $(window).on('load',function(){
        $('#myModal').modal('show');
+       setTimeout(function(){ ($("#intro-fight").get(0).play()) }, 500);
+       setTimeout(function(){ ($("#intro-fight2").get(0).play()) }, 3500);
    });
+   $(window).on('click',function(){
+        $('.close').modal('hide');
+        setTimeout(function(){ ($("#my_intro").get(0).play()) }, 500);
+        setTimeout(function(){ ($("#my_intro2").get(0).play()) }, 3500);
+    });
+   
   $(document).keydown(function(key) {
     if ($("#bars1").show().length != 1) {
       $('#result').text("Player 2 Wins");
@@ -33,17 +41,19 @@ $(document).ready(function() {
     else{
       switch(parseInt(key.which,10)) {
         // A key Pressed
-        case 69:
+        case 81:
           $("#punch").get(0).play();
           $('.player1').animate({left: "500px"}, 150);
           $('.player1').animate({left: "0"}, 150);
           $('#bars2').remove();
         break;
-        case 83:
+        case 87:
           $('.player1').animate({left: "-500px"}, 500);
           $("#special").get(0).play();
-          $('.player1').animate({left: "800px"}, 100);
+          setTimeout(function(){ ($("#punch").get(0).play()) }, 400);
+          $('.player1').animate({left: "700px"}, 100);
           $('.player1').animate({left: "0"}, 150);
+          $('#bars2').remove();
         break;
       }
       switch(parseInt(key.which,10)) {
@@ -57,16 +67,15 @@ $(document).ready(function() {
         case 77:
           $('.player2').animate({left: "500px"}, 500);
           $("#special").get(0).play();
-          $('.player2').animate({left: "-800px"}, 100);
+          setTimeout(function(){ ($("#punch").get(0).play()) }, 400);
+          $('.player2').animate({left: "-700px"}, 100);
           $('.player2').animate({left: "0"}, 150);
+          $('#bars1').remove();
         break;
       }
     }
     
   });
-});
-$(document).ready(function() {
-    $("#my_intro").get(0).play();
 });
 
 function collision($player1, $player2) {
@@ -85,7 +94,8 @@ function collision($player1, $player2) {
 
       if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
       return true;
-    }
+}
+
     window.setInterval(function() {
       if (collision($('.player1'), $('.player2'))) {
         var fight_words = ['BAM!', 'BIM!', 'SLAAHH!!', ' ZBRRAH!', 'PAM !!', 'FATALITY!'];

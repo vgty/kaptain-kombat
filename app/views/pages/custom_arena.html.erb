@@ -12,14 +12,14 @@
   <div class="nav-battle-info-life">
     <div class="info-nb-player _1">
       <h2 class="heading">Life     |</h2>
-      <div class="life-bars">
+      <div class="life-bar1">
         <%@player1.life_points.times do%>
         <span id="bars1">|</span>
         <%end%>
       </div>
     </div>
     <div class="info-nb-player _2">
-      <div class="life-bars" >
+      <div class="life-bar2" >
         <%@player2.life_points.times do%>
         <span id="bars2">|</span>
         <%end%>
@@ -33,13 +33,15 @@
   </div>
   <div class="messages">
     <div id="result" class="text-block">Fight !</div>
-    <%=link_to "New Fight!", new_fight_path, id: "ask-fight", class: "button w-button d-none" %>
+    <%=link_to "Score", new_fight_path, id: "ask-fight", class: "button w-button d-none" %>
   </div>
 </div>
-  <%= audio_tag "kaptain-intro.mp3", controls: true, id: "my_intro"%>
-  <%= audio_tag "special-attack.mp3", controls: true, id: "special"%>
-  <%= audio_tag "punch.mp3", controls: true, id: "punch"%>
-  <%= audio_tag "punch1.mp3", controls: true, id: "punch1"%>
+<%= audio_tag "kaptain-intro.mp3", controls: true, id: "intro-fight"%>
+<%= audio_tag "kaptain-intro2.mp3", controls: true, id: "intro-fight2"%>
+<%= audio_tag "special-attack.mp3", controls: true, id: "special"%>
+<%= audio_tag "punch.mp3", controls: true, id: "punch"%>
+<%= audio_tag "punch1.mp3", controls: true, id: "punch1"%>
+<%= audio_tag "kaptain-intro2.mp3", controls: true, id: "intro-fight2"%>
 </div>
 
 

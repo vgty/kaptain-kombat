@@ -10,6 +10,15 @@ a:hover { text-decoration: none !important; }
   width: 100%;
 }
 
+.modal-header, .modal-body{
+  color: white;
+  background-color: black;
+  font-family: "inconsolata"
+}
+button > span{
+  color: white;
+}
+
 .navbar {
   position: fixed;
   left: 0px;
@@ -50,6 +59,82 @@ a:hover { text-decoration: none !important; }
   background-image: url('arena.jpg');
   background-position: 50% 50%;
   background-size: cover;
+}
+.new-char-s{
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  margin-top: -50px;
+  padding-top: 50px;
+}
+label{
+  font-family: inconsolata;
+  color: white;
+}
+
+.score-container {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: block;
+  width: 90%;
+  height: auto;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 62px;
+  border: 2px solid #fef336;
+  background-color: rgba(0, 0, 0, .31);
+  box-shadow: 0 0 0 4px #ba0e1b;
+}
+
+.score-fight-s {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100vh;
+  padding-top: 42px;
+  background-image: url('arena.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.score-b {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.player-block-score {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.thin-line {
+  width: 2px;
+  background-color: #fff;
 }
 
 .nav-battle-info {
@@ -143,7 +228,7 @@ a:hover { text-decoration: none !important; }
   justify-content: center;
 }
 
-.life-bars {
+.life-bar1, .life-bar2 {
   height: 45px;
   margin-top: 0px;
   font-family: Mk1, sans-serif;

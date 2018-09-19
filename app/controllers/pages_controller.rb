@@ -9,10 +9,6 @@ class PagesController < ApplicationController
     @player2 = Character.find(params['player2'])
   end
   
-  def create_score
-    
-  end
-  
   def show_score
     
   end

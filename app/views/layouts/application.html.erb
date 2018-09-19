@@ -19,9 +19,9 @@
     <div class="arena-section">
     <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
       <div class="w-container">
-        <a href="#" class="w-nav-brand">
+        <%=link_to root_path, class: "w-nav-brand" do %>
           <h1 class="brand">KaptainKombat</h1>
-        </a>
+        <%end%>
         <nav role="navigation" class="w-nav-menu">
           <%=link_to "CHARACTERS", characters_path, class: "navlink w-nav-link"%>
           <%=link_to "NEW FIGHT!",  new_fight_path, class: "navlink w-nav-link"%>
