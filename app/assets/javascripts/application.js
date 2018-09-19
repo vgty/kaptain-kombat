@@ -35,13 +35,32 @@ $(document).ready(function() {
      });
    
   $(document).keydown(function(key) {
+    var player1_lp = $(".bars1").size()
+    var player2_lp = $(".bars2").size()
+    
     if ($("#bars1").show().length != 1) {
       $('#result').text("Player 2 Wins");
-      $('#ask-fight').removeClass("d-none")
+      $('#ask-fight').removeClass("d-none");
+      $('#experience_earned_1').val(0);
+      $('#self_damage_1').val(player1_lp);
+      $('#enemy_damage_1').val(player2_lp);
+      $('#winner_1').val(false);
+      $('#experience_earned_2').val(1);
+      $('#self_damage_2').val(player2_lp);
+      $('#enemy_damage_2').val(player1_lp);
+      $('#winner_2').val(true);
     }
     else if($("#bars2").show().length != 1) {
       $('#result').text("Player 1 Wins");
-      $('#ask-fight').removeClass("d-none")
+      $('#ask-fight').removeClass("d-none");
+      $('#experience_earned_1').val(0);
+      $('#self_damage_1').val(player1_lp);
+      $('#enemy_damage_1').val(player2_lp);
+      $('#winner_1').val(true);
+      $('#experience_earned_2').val(1);
+      $('#self_damage_2').val(player2_lp);
+      $('#enemy_damage_2').val(player1_lp);
+      $('#winner_2').val(false);
     }
     else{
       switch(parseInt(key.which,10)) {
@@ -58,7 +77,7 @@ $(document).ready(function() {
           setTimeout(function(){ ($("#punch").get(0).play()) }, 400);
           $('.player1').animate({left: "700px"}, 100);
           $('.player1').animate({left: "0"}, 150);
-          $('#bars2').remove();
+          $(".bars2").slice(0, 2).remove()
         break;
       }
       switch(parseInt(key.which,10)) {
@@ -75,7 +94,7 @@ $(document).ready(function() {
           setTimeout(function(){ ($("#punch").get(0).play()) }, 400);
           $('.player2').animate({left: "-700px"}, 100);
           $('.player2').animate({left: "0"}, 150);
-          $('#bars1').remove();
+          $(".bars1").slice(0, 2).remove()
         break;
       }
     }
