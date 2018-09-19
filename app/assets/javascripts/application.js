@@ -58,13 +58,13 @@ $(document).ready(function() {
       }
       switch(parseInt(key.which,10)) {
         // Right Arrow Pressed
-        case 37:
+        case 80:
           $("#punch1").get(0).play();
           $('.player2').animate({left: "-500px"}, 150);
           $('.player2').animate({left: "0"}, 150);
           $('#bars1').remove();
         break;
-        case 77:
+        case 76:
           $('.player2').animate({left: "500px"}, 500);
           $("#special").get(0).play();
           setTimeout(function(){ ($("#punch").get(0).play()) }, 400);

@@ -16,6 +16,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'image_processing', '~> 1.2'
 gem "aws-sdk-s3", require: false
 gem 'mini_magick', '~> 4.8'
+gem 'rails_admin', '~> 1.3'
 
 group :development, :test do
   gem 'sqlite3'

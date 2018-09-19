@@ -53,6 +53,6 @@ class WeaponsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def weapon_params
-      params.require(:weapon).permit(:name, :life_points, :attack_points)
+      params.require(:weapon).permit(:name, :attack_force)
     end
 end

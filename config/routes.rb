@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'pages#arena'
   get 'custom_arena', to: 'pages#custom_arena'
   post 'create_score', to: 'pages#create_score'

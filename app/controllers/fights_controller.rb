@@ -24,7 +24,6 @@ class FightsController < ApplicationController
 
   # POST /fights
   def create
-    
     @fight = Fight.new(fight_params)
     @fights = Fight.all
     
