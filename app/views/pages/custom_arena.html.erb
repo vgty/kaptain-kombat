@@ -24,17 +24,35 @@
         <span id="bars2">|</span>
         <%end%>
       </div>
-      <h2 class="heading right">|     Life</h2>
+      <h2 class="heading right">|Life</h2>
     </div>
   </div>
   <div class="fight-zone">
     <div class="player1"><%=image_tag @player1.avatar, class: "img-player1 "%></div>
     <div class="player2"><%=image_tag @player2.avatar, class: "img-player2 "%></div>
   </div>
+  
+  <%= form_tag url_for(controller: 'pages', action: 'create_score'), method: "post" do %>
+    <%=hidden_field_tag "fight_id", @fight.id , id: "fight_id"%>
+    <%=hidden_field_tag "player_1", @player1.id, id: "player_1"%>
+    <%=hidden_field_tag "experience_earned_1", 0, id: "experience_earned_1"%>
+    <%=hidden_field_tag "self_damage_1", 0, id: "self_damage_1"%>
+    <%=hidden_field_tag "enemy_damage_1", 0, id: "enemy_damage_1"%>
+    <%=hidden_field_tag "weapon_id_1", @fight.weapon_player1_id, id: "weapon_id_1"%>
+    <%=hidden_field_tag "winner_1", false, id: "winner_1"%>
+    <%=hidden_field_tag "player_2", @player2.id, id: "player_2"%>
+    <%=hidden_field_tag "experience_earned_2", 0, id: "experience_earned_2"%>
+    <%=hidden_field_tag "self_damage_2", 0, id: "self_damage_2"%>
+    <%=hidden_field_tag "enemy_damage_2", 0, id: "enemy_damage_2"%>
+    <%=hidden_field_tag "weapon_id_2", @fight.weapon_player1_id, id: "weapon_id_2"%>
+    <%=hidden_field_tag "winner_2", true, id: "winner_2"%>
+    
   <div class="messages">
     <div id="result" class="text-block">Fight !</div>
-    <%=link_to "Score", new_fight_path, id: "ask-fight", class: "button w-button d-none" %>
+    <%= submit_tag "Finish", id: "ask-fight", class:"button w-button d-none" %>
   </div>
+  <% end %>
+
 </div>
 <%= audio_tag "kaptain-intro.mp3", controls: true, id: "intro-fight"%>
 <%= audio_tag "kaptain-intro2.mp3", controls: true, id: "intro-fight2"%>

@@ -2,33 +2,49 @@
 <div class="score-container">
   <h1 class="h1-page">SCORES</h1>
   <div class="score-b">
-    <div class="player-block-score"><img src="images/goro.jpeg" class="img-choose">
+    <div class="player-block-score"><<%= image_tag @player1.avatar, class: "img-choose"%>
       <div class="player-info-choose">
         <div class="info-choose">Name:</div>
-        <div class="info-choose">Goro</div>
+        <div class="info-choose"><%=@player1.name%></div>
       </div>
       <div class="player-info-choose">
-        <div class="info-choose">Life:</div>
-        <div class="info-choose">12</div>
+        <div class="info-choose">Self damage:</div>
+        <div class="info-choose"><%=@player1_stats.self_damage%></div>
       </div>
       <div class="player-info-choose">
-        <div class="info-choose">Attack</div>
-        <div class="info-choose">9</div>
+        <div class="info-choose">Enemy damage:</div>
+        <div class="info-choose"><%=@player1_stats.enemy_damage%></div>
+      </div>
+      <div class="player-info-choose">
+        <div class="info-choose">Experience:</div>
+        <div class="info-choose"><%=@player1_stats.experience_earned%></div>
+      </div>
+      <div class="player-info-choose">
+        <div class="info-choose">Winner:</div>
+        <div class="info-choose"><%=@player1_stats.winner%></div>
       </div>
     </div>
     <div class="thin-line"></div>
-    <div class="player-block"><img src="images/goro.jpeg" class="img-choose">
+    <div class="player-block"><<%= image_tag @player2.avatar, class: "img-choose"%>
       <div class="player-info-choose">
         <div class="info-choose">Name:</div>
-        <div class="info-choose">Goro</div>
+        <div class="info-choose"><%=@player2.name%></div>
       </div>
       <div class="player-info-choose">
-        <div class="info-choose">Life:</div>
-        <div class="info-choose">12</div>
+        <div class="info-choose">Self damage:</div>
+        <div class="info-choose"><%=@player2_stats.self_damage%></div>
       </div>
       <div class="player-info-choose">
-        <div class="info-choose">Attack</div>
-        <div class="info-choose">9</div>
+        <div class="info-choose">Enemy damage:</div>
+        <div class="info-choose"><%=@player2_stats.enemy_damage%></div>
+      </div>
+      <div class="player-info-choose">
+        <div class="info-choose">Experience:</div>
+        <div class="info-choose"><%=@player2_stats.experience_earned%></div>
+      </div>
+      <div class="player-info-choose">
+        <div class="info-choose">Winner:</div>
+        <div class="info-choose"><%=@player2_stats.winner%></div>
       </div>
     </div>
   </div>

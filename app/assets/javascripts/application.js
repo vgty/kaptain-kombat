@@ -28,6 +28,11 @@ $(document).ready(function() {
         setTimeout(function(){ ($("#my_intro").get(0).play()) }, 500);
         setTimeout(function(){ ($("#my_intro2").get(0).play()) }, 3500);
     });
+    $(window).on('click',function(){
+         $('.close').modal('hide');
+         setTimeout(function(){ ($("#my_intro").get(0).play()) }, 500);
+         setTimeout(function(){ ($("#my_intro2").get(0).play()) }, 3500);
+     });
    
   $(document).keydown(function(key) {
     if ($("#bars1").show().length != 1) {
@@ -98,7 +103,7 @@ function collision($player1, $player2) {
 
     window.setInterval(function() {
       if (collision($('.player1'), $('.player2'))) {
-        var fight_words = ['BAM!', 'BIM!', 'SLAAHH!!', ' ZBRRAH!', 'PAM !!', 'FATALITY!'];
+        var fight_words = ['BAM!', 'FINISH HIM!', 'SLAAHH!!', ' ZBRRAH!', 'PAM !!', 'FATALITY!'];
         $('#result').text(fight_words[Math.floor(Math.random()*fight_words.length)]);
         
       }

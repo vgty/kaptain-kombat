@@ -7,6 +7,7 @@ class Fight < ApplicationRecord
   
   
   def winner
+    #Demeter law is watching you. Find something else !
     if player1.fight_character_stats.where(fight_id: id).first.winner == true
       player1
     else

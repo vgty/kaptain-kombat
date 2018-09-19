@@ -25,10 +25,15 @@ class FightsController < ApplicationController
   # POST /fights
   def create
     @fight = Fight.new(fight_params)
-    @fights = Fight.all
     
     if @fight.save
-      redirect_to :controller => 'pages', :action => 'custom_arena', :player1 => @fight.player1, :player2 => @fight.player2 
+      redirect_to :controller => 'pages',
+                  :action => 'custom_arena',
+                  :fight_id => @fight.id
+                  # :player1 => @fight.player1,
+                  # :player2 => @fight.player2,
+                  # :weapon_player_1 => @fight.weapon_player1_id,
+                  # :weapon_player_2 => @fight.weapon_player2_id              
     else
       render :new
     end

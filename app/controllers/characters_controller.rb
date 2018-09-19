@@ -8,6 +8,7 @@ class CharactersController < ApplicationController
 
   # GET /characters/1
   def show
+    
   end
 
   # GET /characters/new
