@@ -11,21 +11,6 @@ class PagesController < ApplicationController
     @player1 = @fight.player1
     @player2 = @fight.player2
   end
-  
-  self1 = 0
-  self2 = 3
-  
-  enem1 = 3
-  enem2 = 0
-  
-  vie1 = 10
-  vie2 = 10
-  
-  self1 = vie1 - self1 = 10
-  self2 = vie2 - self2 = 8
-  
-  enem1= 8
-  enem2= 10
     
   def create_score
     @fight = Fight.find(params[:fight_id])

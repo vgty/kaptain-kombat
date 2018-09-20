@@ -6,6 +6,16 @@ class Fight < ApplicationRecord
   has_many :fight_character_stats
   
   
+  validates_presence_of :player1_id,
+                        :player2_id,
+                        :weapon_player1_id,
+                        :weapon_player2_id
+                        
+  validates_numericality_of :player1_id,
+                            :player2_id,
+                            :weapon_player1_id,
+                            :weapon_player2_id
+  
   def winner
     #Demeter law is watching you. Find something else !
     if player1.fight_character_stats.where(fight_id: id).first.winner == true

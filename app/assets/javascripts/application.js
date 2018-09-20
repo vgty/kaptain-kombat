@@ -64,7 +64,6 @@ $(document).ready(function() {
     }
     else{
       switch(parseInt(key.which,10)) {
-        // A key Pressed
         case 81:
           $("#punch").get(0).play();
           $('.player1').animate({left: "500px"}, 150);
@@ -77,7 +76,7 @@ $(document).ready(function() {
           setTimeout(function(){ ($("#punch").get(0).play()) }, 400);
           $('.player1').animate({left: "700px"}, 100);
           $('.player1').animate({left: "0"}, 150);
-          $(".bars2").slice(0, 2).remove()
+          $(".bars2").slice(0, 3).remove()
         break;
       }
       switch(parseInt(key.which,10)) {
@@ -94,11 +93,10 @@ $(document).ready(function() {
           setTimeout(function(){ ($("#punch").get(0).play()) }, 400);
           $('.player2').animate({left: "-700px"}, 100);
           $('.player2').animate({left: "0"}, 150);
-          $(".bars1").slice(0, 2).remove()
+          $(".bars1").slice(0, 3).remove()
         break;
       }
     }
-    
   });
 });
 

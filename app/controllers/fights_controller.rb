@@ -29,7 +29,7 @@ class FightsController < ApplicationController
     if @fight.save
       redirect_to :controller => 'pages',
                   :action => 'custom_arena',
-                  :fight_id => @fight.id            
+                  :fight_id => @fight.id    
     else
       render :new
     end
