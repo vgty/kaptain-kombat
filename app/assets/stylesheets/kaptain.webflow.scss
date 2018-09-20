@@ -9,6 +9,10 @@ a:hover { text-decoration: none !important; }
   height: 100vh;
   width: 100%;
 }
+#error_explanation{
+  color: white;
+  font-family: Inconsolata;
+}
 
 .modal-header, .modal-body{
   color: white;

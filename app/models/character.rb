@@ -7,5 +7,5 @@ class Character < ApplicationRecord
   
   validates_presence_of :name, :life_points, :attack_points
   validates_inclusion_of :life_points, in: 8..15
-  validates_inclusion_of :life_attacks, in: 5..10
+  validates_inclusion_of :attack_points, in: 5..10
 end

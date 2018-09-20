@@ -24,10 +24,10 @@
                 <div class="info-choose">Attack</div>
                 <div class="info-choose"><%=character.attack_points%></div>
               </div>
-              <div class="player-info-choose">
-                <%= link_to 'Show', character %>
-                <%= link_to 'Edit', edit_character_path(character) %>
-                <%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <div class="mt-2">
+                <%= link_to 'Show', character, class: "btn btn-outline-danger " %>
+                <%= link_to 'Edit', edit_character_path(character), class: "btn btn-outline-danger " %>
+                <%= link_to 'Destroy', character, class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             </div>
           </div>
