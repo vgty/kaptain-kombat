@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  # before_action :set_fight, only: [:show, :edit, :update, :destroy]
+  before_action :set_fight, only: [:custom_arena, :create_score, :show_sore]
   
   def arena    
     @player1 = Character.all.sample
@@ -7,13 +7,11 @@ class PagesController < ApplicationController
   end
   
   def custom_arena
-    @fight = Fight.find(params[:fight_id])
     @player1 = @fight.player1
     @player2 = @fight.player2
   end
     
   def create_score
-    @fight = Fight.find(params[:fight_id])
     @self_damage_1 = 3 * (@fight.player1.life_points) - params[:enemy_damage_2].to_i
     @self_damage_2 = 3 * (@fight.player2.life_points) - params[:enemy_damage_1].to_i
     @enemy_damage_1 = @self_damage_2
@@ -41,7 +39,6 @@ class PagesController < ApplicationController
   end
 
   def show_score
-    @fight = Fight.find(params[:fight_id])
     @player1 = @fight.player1
     @player2 = @fight.player2  
     @player1_stats = FightCharacterStat.find_by(fight_id:  @fight.id, character_id: @player1.id)
@@ -51,7 +48,7 @@ class PagesController < ApplicationController
 private
 
   def set_fight
-    @fight = Fight.find(params[:id])
+    @fight = Fight.find(params[:fight_id])
   end
 
 end
